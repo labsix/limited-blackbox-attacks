@@ -1,0 +1,6 @@
+**/data/
+partial_info_*/
+run_gpu_*
+**/*.pyc
+partial_info_*/
+ptl_info_*
