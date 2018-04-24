@@ -12,7 +12,7 @@ To reproduce our results:
 ```
 @unpublished{limited-blackbox,
     author= {Andrew Ilyas and Logan Engstrom and Anish Athalye and Jessy Lin},
-    title= {Black-Box Adversarial Attakcs with Limited Queries and Information},
+    title= {Black-box Adversarial Attacks with Limited Queries and Information},
     year = {2018},
     url = {http://arxiv.org/abs/1804.08598}
 }
