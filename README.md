@@ -10,10 +10,12 @@ To reproduce our results:
 
 ## Citation
 ```
-@unpublished{limited-blackbox,
-    author= {Andrew Ilyas and Logan Engstrom and Anish Athalye and Jessy Lin},
-    title= {Black-Box Adversarial Attakcs with Limited Queries and Information},
-    year = {2018},
-    url = {http://arxiv.org/abs/1804.08598}
+@inproceedings{ilyas2018blackbox,
+  author = {Andrew Ilyas and Logan Engstrom and Anish Athalye and Jessy Lin},
+  title = {Black-box Adversarial Attacks with Limited Queries and Information},
+  booktitle = {Proceedings of the 35th International Conference on Machine Learning, {ICML} 2018},
+  year = {2018},
+  month = jul,
+  url = {https://arxiv.org/abs/1804.08598},
 }
 ```
