@@ -249,7 +249,7 @@ def main(args, gpus):
                 print("[log] backtracking eps to %3f" % (epsilon-prop_de,))
 
         # BOOK-KEEPING STUFF
-        num_queries += args.samples_per_draw
+        num_queries += args.samples_per_draw*(zero_iters if label_only else 1)
         log_text = 'Step %05d: loss %.4f lr %.2E eps %.3f (time %.4f)' % (i, l, \
                         current_lr, epsilon, time.time() - start)
         log_file.write(log_text + '\n')
