@@ -81,7 +81,10 @@ def main(args, gpus):
     sess = tf.InteractiveSession()
     x = tf.placeholder(tf.float32, initial_img.shape)
     eval_logits, eval_preds = model(sess, tf.expand_dims(x, 0))
-    eval_percent_adv = tf.equal(eval_preds[0], tf.constant(target_class, tf.int64))
+    if target_class >= 0:
+        eval_percent_adv = tf.equal(eval_preds[0], tf.constant(target_class, tf.int64))
+    else:
+        eval_percent_adv = tf.not_equal(eval_preds[0], tf.constant(orig_class, tf.int64))
 
     # TENSORBOARD SETUP
     empirical_loss = tf.placeholder(dtype=tf.float32, shape=())
