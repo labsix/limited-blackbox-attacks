@@ -22,7 +22,6 @@ def main():
     parser.add_argument('--orig-class', type=int)
     parser.add_argument('--sigma', type=float, default=SIGMA)
     parser.add_argument('--epsilon', type=float, default=EPSILON)
-    parser.add_argument('--learning-rate', type=float, default=LEARNING_RATE)
     parser.add_argument('--img-path', type=str)
     parser.add_argument('--img-index', type=int)
     parser.add_argument('--out-dir', type=str, required=True,

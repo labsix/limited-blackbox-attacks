@@ -48,7 +48,6 @@ def main(args, gpus):
             np.clip(np.load(args.restore), lower, upper)
     batch_per_gpu = batch_size // len(gpus)
     log_iters = args.log_iters
-    current_lr = args.learning_rate
     queries_per_iter = args.samples_per_draw
     max_iters = int(np.ceil(args.max_queries // queries_per_iter))
     max_lr = args.max_lr
