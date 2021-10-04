@@ -3,6 +3,7 @@ from tools.utils import *
 import os
 import numpy as np
 import scipy
+import imageio
 
 def log_output(sess, eval_logits, eval_preds, x, adv, initial_img, \
         target_class, out_dir, orig_class, num_queries):
@@ -20,9 +21,9 @@ def log_output(sess, eval_logits, eval_preds, x, adv, initial_img, \
         fout.write('true %d\n' % orig_class)
         fout.write('target %d\n' % target_class)
         fout.write('queries %d\n' % num_queries)
-    scipy.misc.imsave(os.path.join(eval_dir, 'original.png'), initial_img)
+    imageio.imwrite(os.path.join(eval_dir, 'original.png'), initial_img)
     np.save(os.path.join(eval_dir, 'original.npy'), initial_img)
-    scipy.misc.imsave(os.path.join(eval_dir, 'adversarial.png'), adv)
+    imageio.imwrite(os.path.join(eval_dir, 'adversarial.png'), adv)
     np.save(os.path.join(eval_dir, 'adversarial.npy'), adv)
     with open(os.path.join(eval_dir, 'sample.txt'), 'w') as fout:
         fout.write('orig_pred %d\n' % eval_preds_orig_[0])

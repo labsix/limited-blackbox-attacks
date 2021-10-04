@@ -14,6 +14,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from tools.logging_utils import *
+import imageio
 
 from tools.inception_v3_imagenet import model
 from tools.imagenet_labels import label_to_name
@@ -270,7 +271,7 @@ def main(args, gpus):
 
         if (i+1) % args.save_iters == 0 and args.save_iters > 0:
             np.save(os.path.join(out_dir, '%s.npy' % (i+1)), adv)
-            scipy.misc.imsave(os.path.join(out_dir, '%s.png' % (i+1)), adv)
+            imageio.imwrite(os.path.join(out_dir, '%s.png' % (i+1)), adv)
     log_output(sess, eval_logits, eval_preds, x, adv, initial_img, \
             target_class, out_dir, orig_class, num_queries)
 
