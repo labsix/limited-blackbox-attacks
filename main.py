@@ -68,7 +68,8 @@ def main():
             raise RuntimeError('not enough GPUs! (requested %d, found %d)' % (args.gpus, len(gpus)))
         gpus = gpus[:args.gpus]
     if not gpus:
-        raise NotImplementedError('no support for using CPU-only because lazy')
+        # Use CPU if GPU not found
+        gpus = ['/device:cpu:0']
     if args.batch_size % 2*len(gpus) != 0:
         raise ValueError('batch size must be divisible by 2 * number of GPUs (batch_size=%d, gpus=%d)' % (
             batch_size,
